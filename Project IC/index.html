@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independence City - Cổng Thành</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-slate-800 p-8 rounded-xl shadow-2xl border border-slate-700">
+        <!-- Logo & Tên Đô Thị -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-extrabold tracking-wider text-amber-400">INDEPENDENCE CITY</h1>
+            <p class="text-sm text-slate-400 mt-1">Cổng thông tin nhập cảnh đô thị tự do</p>
+        </div>
+
+        <!-- HỘP THÔNG BÁO LỖI (Thay thế alert() theo ý ChatGPT và Grok) -->
+        <div id="auth-message" class="hidden mb-4 p-3 rounded text-sm text-center font-medium"></div>
+
+        <!-- FORM NHẬP LIỆU -->
+        <div class="space-y-4">
+            <!-- Ô nhập Tên (Mặc định ẩn, chỉ hiện khi Đăng ký) -->
+            <div id="name-group" class="hidden">
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Tên khai sinh cư dân:</label>
+                <input type="text" id="auth-fullname" placeholder="Nguyễn Văn A" 
+                       class="w-full p-3 rounded bg-slate-950 border border-slate-700 focus:outline-none focus:border-amber-400 transition text-white">
+            </div>
+
+            <!-- Ô nhập Email -->
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Email định danh:</label>
+                <input type="email" id="auth-email" placeholder="name@city.com" 
+                       class="w-full p-3 rounded bg-slate-950 border border-slate-700 focus:outline-none focus:border-amber-400 transition text-white">
+            </div>
+
+            <!-- Ô nhập Mật khẩu -->
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Mật mã truy cập:</label>
+                <input type="password" id="auth-password" placeholder="••••••••" 
+                       class="w-full p-3 rounded bg-slate-950 border border-slate-700 focus:outline-none focus:border-amber-400 transition text-white">
+            </div>
+
+            <!-- HỆ THỐNG NÚT BẤM CHUYỂN ĐỔI -->
+            <div class="pt-2">
+                <!-- Nút hành động chính (Mặc định là Đăng nhập) -->
+                <button id="btn-action" class="w-full bg-amber-500 hover:bg-amber-400 font-bold py-3 px-4 rounded text-slate-950 transition duration-150">
+                    Tiến Vào Thành Phố (Đăng Nhập)
+                </button>
+            </div>
+
+            <!-- Link Toggle chuyển chế độ -->
+            <div class="text-center pt-2">
+                <a href="#" id="link-toggle" class="text-sm text-amber-400 hover:underline transition">
+                    Chưa có thị thực? Xin cấp cư dân mới (Đăng ký)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nhúng script điều hướng cổng thành -->
+    <script type="module" src="./src/initAuth.js"></script>
+</body>
+</html>
